@@ -21,7 +21,10 @@ class KorisniciModelTest {
     void testNovogKorisnika(){
         ObservableList<Korisnik> x = model.getKorisnici();
         x.add(new Korisnik("Šemso","Šemsic","mail","user","pass"));
-        assertEquals(7,model.getKorisnici().size());
+        assertEquals(7,model.getKorisnici().size());     // testira korisnika
     }
+
+
+
 
 }
