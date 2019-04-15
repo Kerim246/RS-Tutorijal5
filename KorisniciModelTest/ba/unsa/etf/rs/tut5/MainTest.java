@@ -27,7 +27,7 @@ class MainTest {
     @Test
     public void testButtonClick (FxRobot robot) {
         TextField btnPrijava = robot.lookup("#Imefield").queryAs(TextField.class);
-        robot.clickOn(btnPrijava);
+        robot.clickOn(btnPrijava); //
         robot.write("Danas");
         robot.press(KeyCode.ALT).press(KeyCode.F4).release(KeyCode.F4);
 

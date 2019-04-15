@@ -19,7 +19,7 @@ class KorisnikTest {
 
     static void getPrezimeTest(){
         String novoPrezime = "Jon";
-        korisnik.setPrezime(novoPrezime);
+        korisnik.setPrezime(novoPrezime);                //a
         assertEquals("Jon",korisnik.getPrezime());
     }
 
