@@ -37,7 +37,12 @@ public class Controller implements Initializable {
 
     }
 
-    public void btnaddaction(ActionEvent actionEvent) {
+    public void btnaddaction(ActionEvent actionEvent) {     // Dodavanje korisnika
+        model.dodajKorisnika();
+        unbind();
+        model.setTrenutniKorisnik( model.getKorisnici().get(model.getKorisnici().size() - 1) );
+        bind();
+        listKorisnik.refresh();
     }
 
     @Override
@@ -55,11 +60,6 @@ public class Controller implements Initializable {
             }
         });
     }
-
-
-
-
-
 
             private void unbind() {
                 Imefield.textProperty().unbindBidirectional(model.getTrenutniKorisnik().imeProperty());   // simpleStringproperty vraca

@@ -38,4 +38,8 @@ public class KorisniciModel {
         korisnici.add(new Korisnik("Hajrudin", "Dino Poplava", "semso@etf.unsa.ba", "poplava", "davamjeznat"));
         korisnici.add(new Korisnik("Zoran", "Dino Poplava", "semso@etf.unsa.ba", "poplava", "davamjeznat"));
     }
+
+    public void dodajKorisnika() {
+        korisnici.add(new Korisnik());
+    }
 }
