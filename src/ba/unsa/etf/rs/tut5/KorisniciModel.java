@@ -5,20 +5,20 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class KorisniciModel {
-    private ObservableList<Korisnik> korisnici;
+    private ObservableList<Korisnik> korisnik;
     private SimpleObjectProperty<Korisnik> trenutniKorisnik;
 
     public KorisniciModel() {
-        this.korisnici = FXCollections.observableArrayList();
+        this.korisnik = FXCollections.observableArrayList();
         this.trenutniKorisnik = new SimpleObjectProperty<>();
     }
 
-    public ObservableList<Korisnik> getKorisnici() {
-        return korisnici;
+    public ObservableList<Korisnik> getKorisnik() {
+        return korisnik;
     }
 
-    public void setKorisnici(ObservableList<Korisnik> korisnici) {
-        this.korisnici = korisnici;
+    public void setKorisnik(ObservableList<Korisnik> korisnici) {
+        this.korisnik = korisnici;
     }
 
     public Korisnik getTrenutniKorisnik() {
@@ -34,12 +34,12 @@ public class KorisniciModel {
     }
 
     public void napuni(){
-        korisnici.add(new Korisnik("Šemsudin", "Šemso", "semso@etf.unsa.ba", "poplava", "davamjeznat"));
-        korisnici.add(new Korisnik("Hajrudin", "Hajro", "hajro@etf.unsa.ba", "fen", "davaqeemjeznat"));
-        korisnici.add(new Korisnik("Zoran", "Zoro", "zoro@etf.unsa.ba", "asd", "qwerr"));
+        korisnik.add(new Korisnik("Šemsudin", "Šemso", "semso@etf.unsa.ba", "poplava", "davamjeznat"));
+        korisnik.add(new Korisnik("Hajrudin", "Hajro", "hajro@etf.unsa.ba", "fen", "davaqeemjeznat"));
+        korisnik.add(new Korisnik("Zoran", "Zoro", "zoro@etf.unsa.ba", "asd", "qwerr"));
     }
 
     public void dodajKorisnika() {
-        korisnici.add(new Korisnik());
+        korisnik.add(new Korisnik());
     }
 }

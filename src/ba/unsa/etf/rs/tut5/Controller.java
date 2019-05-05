@@ -40,7 +40,7 @@ public class Controller implements Initializable {
     public void btnaddaction(ActionEvent actionEvent) {     // Dodavanje korisnika
         model.dodajKorisnika();
         unbind();
-        model.setTrenutniKorisnik( model.getKorisnici().get(model.getKorisnici().size() - 1) );
+        model.setTrenutniKorisnik( model.getKorisnik().get(model.getKorisnik().size() - 1) );
         bind();
         listKorisnik.refresh();
     }
@@ -68,9 +68,9 @@ public class Controller implements Initializable {
             }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        model.setTrenutniKorisnik(model.getKorisnici().get(0));
+        model.setTrenutniKorisnik(model.getKorisnik().get(0));
         bind();
-        listKorisnik.setItems(model.getKorisnici());
+        listKorisnik.setItems(model.getKorisnik());
         listKorisnik.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Korisnik>() {
             @Override
             public void changed(ObservableValue<? extends Korisnik> observableValue, Korisnik oldUser, Korisnik newUser) {

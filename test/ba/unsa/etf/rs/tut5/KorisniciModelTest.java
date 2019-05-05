@@ -1,7 +1,8 @@
 package ba.unsa.etf.rs.tut5;
 
 import javafx.collections.ObservableList;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import org.testng.annotations.ITestAnnotation;
 import org.junit.jupiter.api.BeforeAll;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -19,9 +20,9 @@ class KorisniciModelTest {
 
     @Test
     void testNovogKorisnika(){
-        ObservableList<Korisnik> x = model.getKorisnici();
+        ObservableList<Korisnik> x = model.getKorisnik();
         x.add(new Korisnik("Šemso","Šemsic","mail","user","pass"));
-        assertEquals(7,model.getKorisnici().size());     // testira korisnika
+        assertEquals(7,model.getKorisnik().size());     // testira korisnika
     }
 
     @Test
