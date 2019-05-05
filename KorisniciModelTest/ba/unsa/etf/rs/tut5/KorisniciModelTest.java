@@ -24,6 +24,12 @@ class KorisniciModelTest {
         assertEquals(7,model.getKorisnici().size());     // testira korisnika
     }
 
+    @Test
+    void ProvjeraBrojaKorisnika(){
+        model.setKorisnik(model.getKorisnik());
+        assertEquals(5 , model.getKorisnik().size());
+    }
+
 
 
 

@@ -1,27 +1,33 @@
 package ba.unsa.etf.rs.tut5;
 
-import org.junit.Test;
+import javafx.stage.Stage;
+import org.junit.jupiter.api.Test;
+import org.testfx.api.FxRobot;
+import org.testfx.framework.junit5.ApplicationTest;
+
+import java.awt.*;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class MainTest {
+class MainTest extends ApplicationTest {
     public MainTest() {
         super();
     }
 
     @Override
-    public int hashCode() {
-        return super.hashCode();
+    public void init() throws Exception {
+        super.init();
     }
 
     @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
+    public void start(Stage stage) throws Exception {
+        super.start(stage);
     }
 
     @Override
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
+    public void stop() throws Exception {
+        super.stop();
     }
 
     @Test
