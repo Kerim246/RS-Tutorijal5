@@ -12,7 +12,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         KorisniciModel model = new KorisniciModel();
         model.napuni();
-        model.setTrenutniKorisnik(model.getKorisnici().get(0)); // trenutni korisnik je prvi na listi
+        model.setTrenutniKorisnik(model.getKorisnik().get(0)); // trenutni korisnik je prvi na listi
 
         Controller controller = new Controller(model);
         FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));
