@@ -34,9 +34,9 @@ public class KorisniciModel {
     }
 
     public void napuni(){
-        korisnici.add(new Korisnik("Šemsudin", "Dino Poplava", "semso@etf.unsa.ba", "poplava", "davamjeznat"));
-        korisnici.add(new Korisnik("Hajrudin", "Dino Poplava", "semso@etf.unsa.ba", "poplava", "davamjeznat"));
-        korisnici.add(new Korisnik("Zoran", "Dino Poplava", "semso@etf.unsa.ba", "poplava", "davamjeznat"));
+        korisnici.add(new Korisnik("Šemsudin", "Šemso", "semso@etf.unsa.ba", "poplava", "davamjeznat"));
+        korisnici.add(new Korisnik("Hajrudin", "Hajro", "hajro@etf.unsa.ba", "fen", "davaqeemjeznat"));
+        korisnici.add(new Korisnik("Zoran", "Zoro", "zoro@etf.unsa.ba", "asd", "qwerr"));
     }
 
     public void dodajKorisnika() {

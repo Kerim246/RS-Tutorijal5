@@ -45,21 +45,7 @@ public class Controller implements Initializable {
         listKorisnik.refresh();
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        listKorisnik.setItems(model.getKorisnici());
-        listKorisnik.selectionModelProperty().addListener(new ChangeListener<MultipleSelectionModel<Korisnik>>() {
-            @Override
-            public void changed(ObservableValue<? extends MultipleSelectionModel<Korisnik>> observable, MultipleSelectionModel<Korisnik> oldValue, MultipleSelectionModel<Korisnik> newValue) {
-                if (newValue == null) {
-                    unbind();
-                } else {
-                    bind();
-                    model.setTrenutniKorisnik(newValue.getSelectedItem());
-                }
-            }
-        });
-    }
+
 
             private void unbind() {
                 Imefield.textProperty().unbindBidirectional(model.getTrenutniKorisnik().imeProperty());   // simpleStringproperty vraca
@@ -80,7 +66,37 @@ public class Controller implements Initializable {
                 lozinkafield.textProperty().bindBidirectional(model.getTrenutniKorisnik().passwordProperty());
 
             }
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        model.setTrenutniKorisnik(model.getKorisnici().get(0));
+        bind();
+        listKorisnik.setItems(model.getKorisnici());
+        listKorisnik.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Korisnik>() {
+            @Override
+            public void changed(ObservableValue<? extends Korisnik> observableValue, Korisnik oldUser, Korisnik newUser) {
+                if(oldUser != null)
+                    unbind();
+                if(newUser == null){
+                    Imefield.setText("");
+                    Prezimefield.setText("");
+                    mailfield.setText("");
+                    korisnickofield.setText("");
+                    lozinkafield.setText("");
+                }
+                else {
+                    Korisnik korisnik = listKorisnik.getSelectionModel().getSelectedItem();
+                    unbind();
+                    model.setTrenutniKorisnik(korisnik);
+                    bind();
+                    listKorisnik.refresh();
+                }
+                listKorisnik.refresh();
+            }
+        });
+    }
+
         }
+
 
 
 
